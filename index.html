@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f4f8cf3fb4.js" crossorigin="anonymous"></script>
+    <title>Met Museum Wall of Art</title>
+</head>
+<body>
+    <header>
+        <div id="close-button"><i class="fa-solid fa-xmark"></i></div>
+        <div id="search-bar"><input id="search-field" type="text" placeholder="Search for art"><i id="magnifying-glass" class="fa-solid fa-magnifying-glass"></i></div>
+    </header>
+    <div id="overlay">
+        <div id="overlay-content">
+            <img id ="overlay-content-image" src="assets/img2.jpg" alt="">
+            <div id="overlay-content-info">
+                <h1 id ="overlay-content-h1">Title of work</h1>
+                <h2 id ="overlay-content-h2">Artist</h2>
+                <p  id ="overlay-content-p" class="margin-20">Information about piece of art.</p>
+                <p id="art-navigation" class="margin-20">
+                    <a id ="overlay-content-more" href="javascript:;" target="_blank">Learn More</a> 
+                    <a id ="overlay-content-hi-res" href="javascript:;" target="_blank">High Resolution</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <main id="container">
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

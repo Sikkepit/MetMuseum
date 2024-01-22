@@ -1,0 +1,237 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+    min-height: 100svh; 
+    background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
+    color:white;
+    font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Main styles */
+
+.margin-20 {
+    margin-top:20px;
+}
+
+
+/* CONTAINER */
+
+#container {
+    max-width: 100%;
+    margin: 0 auto;
+    column-width:300px;
+    column-gap: 0;
+}
+@media (min-width:2080px) {
+    #container {
+        width:2080px;
+    }
+    
+}
+
+/* SEARCH BAR */
+
+#search-bar {
+    background-color: rgba(0, 0, 0, 0.5 );
+    width:350px;
+    height:60px;
+    color: white;
+    position: fixed;
+    left:50%;
+    top:1.5rem;
+    margin-left: -175px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    padding: 0 1.5rem;
+    z-index: 10;
+}
+#search-bar > input {
+    font-family: Roboto;
+    font-size:1.2rem;
+    color: white;
+    background: none;
+    height:auto;
+    width:280px;
+    border:none;
+    text-align: center;
+}
+@media only screen and (min-width: 450px) {
+    #search-bar {
+      width: 400px;
+      margin-left: -200px
+    }
+    #search-bar > input {
+        width: 330px;
+    }
+  }
+
+#search-bar > input:focus {
+    outline: none;
+}
+
+#magnifying-glass {
+    cursor: pointer;
+}
+
+/* ART OVERVIEW PAGE */
+
+.card {
+    min-width:300px;
+    padding:0;
+    margin:0;
+    break-inside: avoid;
+    transition: transform .2s, box-shadow .2s;
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* border: 2px solid white; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+/* OVERLAY/DETAIL PAGE */
+
+#overlay {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width:100dvw;
+    min-height:100dvh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index:20;
+    bottom:0;
+    top:0;
+    overflow: scroll;
+}
+
+#overlay-content {
+    padding:0;
+    display: flex;
+    background-color: black;
+    align-items: start;
+    max-width: 800px;
+}
+
+/* Add to overlay-content for landscape art */
+.overlay-content-landscape { 
+    max-width: 500px!important;
+    flex-direction: column!important;
+}
+#overlay-content-info {
+    padding:20px 40px;
+    width:100%;
+}
+#overlay-content-image {
+    max-width: 370px
+}
+
+/* Add to overlay-image for landscape art */
+.overlay-content-image-landscape { 
+    max-width: 100%!important;
+}
+
+
+@media only screen and (max-width: 825px) {
+    #overlay {
+      align-items: start;
+      background-color: black;
+    }
+    #overlay-content {
+        width:100%;
+        flex-direction: column;
+        height: 100dvh;
+        align-items: center;
+    }
+    #overlay-content img{
+        max-width:100%;
+    }
+    #container img{
+        width:100%;
+    }
+  }
+
+#close-button {
+    background-color: #036f47;
+    text-align: center;
+    width:50px;
+    height:50px;
+    position: fixed;
+    z-index:100;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+}
+.fa-xmark {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.show-me {
+    display:block!important;
+}
+
+#overlay-content-info > h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02rem;
+}
+
+#overlay-content-info > h2 {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#overlay-content-p {
+    line-height: 1.4rem;
+}
+
+#overlay-content-more, #overlay-content-hi-res {
+    background-color: #036f47;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+#overlay-content a:hover {
+    background-color: #e7e7e7; 
+    color: black;
+}
+
+#art-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 40px;
+}
+
+#artist-link {
+    color: white;
+}
